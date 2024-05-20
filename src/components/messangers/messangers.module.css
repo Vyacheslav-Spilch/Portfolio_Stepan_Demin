@@ -1,0 +1,105 @@
+.box_messangers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* border: 2px solid red; */
+    font-size: 30px;
+}
+
+.box_messangers a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #ffffff1f;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.5s;
+    transition: color 0.5s ease;
+    /* display: none; */
+    transform: translate(200%, 0);
+    animation-name: showMessangers;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    transition: 0.3s ease;
+}
+
+
+.box_messangers a:nth-child(1) {
+    animation-delay: 0.4s;
+}
+.box_messangers a:nth-child(2) {
+    margin-top: 20px;
+    animation-delay: 0.6s;
+}
+.box_messangers a:nth-child(3) {
+    margin-top: 20px;
+    animation-delay: 0.8s;
+}
+.box_messangers a:nth-child(4) {
+    margin-top: 20px;
+    animation-delay: 1s;
+}
+
+
+.box_messangers a::before {
+    position: absolute;
+    display: block;
+    content: '';
+
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: #fff;
+    transition: width 0.6s ease;
+}
+.box_messangers a:hover::before {
+    width: 100%;
+}
+
+
+.box_messangers a:hover {
+    transition: color 0.8s ease;
+}
+.box_messangers .instagram:hover {
+    color: #bc318f;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+.box_messangers .telegram:hover {
+    color: #1c92d2;
+    background: #1c92d2;
+    background: linear-gradient(to right,#1c92d2,#f2fcfe)
+}
+.box_messangers .vkontakte:hover {
+    color: #45668e;
+    background: #45668e;
+}
+.box_messangers .whatsapp:hover {
+    color: #00E676;
+    background: #00E676;
+}
+
+
+.box_messangers a:hover::before {
+    width: 100%;
+}
+
+@keyframes showMessangers {
+    50% {
+        transform: translate(-60%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
