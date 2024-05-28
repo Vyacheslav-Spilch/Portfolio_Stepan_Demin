@@ -9,13 +9,11 @@ import ballet8 from './images/balet/ballet8.jpg'
 import ballet9 from './images/balet/ballet9.jpg'
 
 
-
 import portrait1 from './images/portraits/portrait1.jpg'
 import portrait2 from './images/portraits/portrait2.jpg'
 import portrait3 from './images/portraits/portrait3.jpg'
 import portrait4 from './images/portraits/portrait4.jpg'
 import portrait5 from './images/portraits/portrait5.jpg'
-
 
 
 import model1 from './images/model/model1.jpg'
@@ -26,12 +24,10 @@ import model5 from './images/model/model5.jpg'
 import model6 from './images/model/model6.jpg'
 
 
-
 import studio1 from './images/studio/studio1.jpg'
 import studio2 from './images/studio/studio2.jpg'
 import studio3 from './images/studio/studio3.jpg'
 import studio4 from './images/studio/studio4.jpg'
-
 
 
 export type StateType = {
@@ -40,6 +36,7 @@ export type StateType = {
     image: string
     setImages: Array<string>
 }
+
 
 export const state: Array<StateType> = [
     {
@@ -63,6 +60,33 @@ export const state: Array<StateType> = [
     {
         id: 4,
         chapterName: 'Студийная фотография',
+        image: studio1,
+        setImages: [studio1, studio2, studio3, studio4]
+    }
+]
+
+export const stateEng: Array<StateType> = [
+    {
+        id: 1,
+        chapterName: 'Ballet photography',
+        image: ballet6,
+        setImages: [ballet1, ballet2, ballet3, ballet4, ballet5, ballet6, ballet7, ballet8, ballet9]
+    },
+    {
+        id: 2,
+        chapterName: 'Bissiness portrait',
+        image: portrait1,
+        setImages: [portrait1, portrait2, portrait3, portrait4, portrait5]
+    },
+    {
+        id: 3,
+        chapterName: 'Model snippets',
+        image: model1,
+        setImages: [model1, model2, model3, model4, model5, model6]
+    },
+    {
+        id: 4,
+        chapterName: 'Studio photography',
         image: studio1,
         setImages: [studio1, studio2, studio3, studio4]
     }

@@ -1,32 +1,58 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import { ValueContext } from '../../App'
+import { Context } from '../../Context'
 import s from './header.module.css'
 
-type LanguagesType = 'russian' | 'england'
 
 export const Header = () => {
 
+    //contextState
+    const { changeLang, setChangeLang } = useContext<ValueContext>(Context)
 
-    const [language, setLanguage] = useState<LanguagesType>('russian')
-
-
-    function toggleLangRus () {
-        setLanguage('russian')
+    //toggleLang
+    const selectRussianLang = () => {
+        setChangeLang('russian')
+        if(localStorage.getItem('language') !== null) {
+            localStorage['language'] = 'russian'
+        } else {
+            localStorage.setItem('language', 'russian')
+        }
     }
 
-    function toggleLangEng () {
-        setLanguage('england')
+    const  selectEnglandLang = () => {
+        setChangeLang('england')
+        if(localStorage.getItem('language') !== null) {
+            localStorage['language'] = 'england'
+        } else {
+            localStorage.setItem('language', 'england')
+        }
     }
+
+    //styles
+    const RusClassName = changeLang === 'russian' ? `${s.btn_rus} ${s.active}` : s.btn_rus
+    const EngClassName = changeLang === 'england' ? `${s.btn_eng} ${s.active}` : s.btn_eng
 
     return (
         <header className={s.header}>
             <div className={s.logo}>Logo</div>
             <nav className={s.navbar}>
-                <a href="#home" className={s.active}>Главная</a>
-                <a href="#about-me">О себе </a>
-                <a href="#galery">Галерея</a>
-                <a href="">Отзывы</a>
+                <a href="#home" className={s.active}>
+                    {changeLang === 'russian' ? 'Главная': 'Main'}
+                </a>
+                <a href="#about-me">
+                    {changeLang === 'russian' ? 'О себе': 'About me'}
+                </a>
+                <a href="#galery">
+                    {changeLang === 'russian' ? 'Галерея': 'Galery'}
+                </a>
+                <a href="#contacts">
+                    {changeLang === 'russian' ? 'Контакты': 'Contacts'}
+                </a>
             </nav>
-            
+            <div className={s.box_btn_lang}>
+                <button className={RusClassName} onClick={selectRussianLang}>Ru</button>
+                <button className={EngClassName} onClick={selectEnglandLang}>En</button>
+            </div>
         </header>
     )
 }

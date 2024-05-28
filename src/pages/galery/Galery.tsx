@@ -1,27 +1,30 @@
+import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { ValueContext } from '../../App'
+import { Context } from '../../Context'
 import s from './galery.module.css'
 
-// import { NavLink } from 'react-router-dom'
-
-import { state } from './state'
-
+import { state} from './state'
 
 
 
 export const Galery = () => {
 
+    const { changeLang } = useContext<ValueContext>(Context)
+
+    const titleChapter = changeLang === 'russian' ? 'Галерея' : 'Galery'
+
     return (
         <section id="galery" className={s.box_galery}>
             <h2>
-                <span className={s.title_gradient}>Галерея</span>
+                <span className={s.title_gradient}>{titleChapter}</span>
             </h2>
             <div className={s.box_images}>
                 {state.map(chapter => {
                     return (
-                        <div key={chapter.id} className={s.wrapper_img_chapter}>
+                        <div key={chapter.id} className={changeLang === 'russian' ? s.wrapper_img_chapter : s.wrapper_img_chapter_eng}>
                             <NavLink to={`/galery/${chapter.id}`}>
                                 <img src={chapter.image} alt="" />
-                                {/* <span className={s.title_chapter}>{chapter.chapterName}</span> */}
                             </NavLink>
                         </div>
                     )

@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;  
-    padding: 100px 20px 10px 50px;
+	padding: 100px 0 0 80px;
     background-color: black;
     animation-name: showGradient;
     animation-timing-function: linear;
@@ -23,6 +23,7 @@
 }
 .box_info h2 {
     font-size: 52px;
+    font-family: "DM Serif Display", serif;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 30px;
@@ -40,6 +41,7 @@
     transform: translateX(-50%);
 }
 .title_gradient {
+    font-family: "DM Serif Display", serif;
     color: rgb(198, 172, 25);
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
     -webkit-background-clip: text;
@@ -63,7 +65,7 @@
     transition: all 0.4s ease;
 
     opacity: 0;
-    transform: translateX(-120%);
+    /* transform: translateX(-120%); */
 }
 
 .box_info ul li:nth-child(1) {
@@ -155,21 +157,15 @@
 @keyframes showInfoText {
     0% {
         opacity: 0;
-        transform: translateX(-120%);
+        transform: translateY(120%);
     }
     50% {
         opacity: 0.5;
-        transform: translateX(-60%);
+        transform: translateY(60%);
         /* letter-spacing: 2; */
-    }
-    75% {
-        opacity: 0.75;
-        /* transform: translateX(5%); */
-        letter-spacing: 2.6;
     }
     100% {
         opacity: 1;
-        transform: translateX(0%);
-        letter-spacing: normal;
+        transform: translateY(0%);
     }
 }

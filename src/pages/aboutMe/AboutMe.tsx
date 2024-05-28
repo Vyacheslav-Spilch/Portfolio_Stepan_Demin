@@ -1,3 +1,7 @@
+import { useContext } from 'react'
+import { ValueContext } from '../../App'
+import { Context } from '../../Context'
+import './../../styles/main.css'
 import s from './aboutMe.module.css'
 import img__about_me2 from './img_about_me2.png'
 import img__about_me4 from './img_about_me4.png'
@@ -5,11 +9,16 @@ import img__about_me4 from './img_about_me4.png'
 
 
 export const AboutMe = () => {
+
+    const { changeLang } = useContext<ValueContext>(Context)
+
+    const titleChapter =  changeLang === 'russian' ? 'О себе' : 'About me'
+
     return (
         <section id='about-me' className={s.about_me}>
             <div className={s.box_info}>
                 <h2>
-                    <span className={s.title_gradient}>Биография</span>
+                    <span className={s.title_gradient}>{titleChapter}</span>
                 </h2>
                 <ul>
                     <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde molestias, ipsam explicabo provident veritatis placeat tempora velit molestiae quam, aperiam error fuga adipisci, nobis praesentium sint totam sequi laborum iste.</li>

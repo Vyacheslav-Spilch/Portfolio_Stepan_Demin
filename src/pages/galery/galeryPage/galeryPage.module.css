@@ -14,7 +14,9 @@
 }
 .box_title_chapter {
     position: fixed;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     padding: 20px 0 20px;
@@ -25,6 +27,47 @@
 .box_title_chapter h2 {
     font-size: 32px;
     color: white;
+}
+
+
+.box_title {
+    position: relative;
+    width: fit-content;
+}
+.box_title button {
+    position: absolute;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.btn_back {
+    top: 50%;
+    transform: translateY(-50%);
+    left: -250px;
+}
+.btn_next {
+    top: 50%;
+    transform: translateY(-50%);
+    right: -250px;
+}
+.btn_go_main {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 50px;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid #ffffff52;
+    color: #ffffff52;
+    transition: 0.3s;
+}
+.btn_go_main button:hover {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    transition: border, color 0.3s ease-in-out;
 }
 
 .box_images {
