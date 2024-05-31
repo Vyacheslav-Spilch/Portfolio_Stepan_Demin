@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: rgba(0, 0, 0, 0.796);
     z-index: 100;
     opacity: 0;
@@ -27,18 +27,49 @@
     justify-content: space-around;
     align-items: center;
     width: 50%;
+    height: 100%;
     /* border: 1px solid red; */
 }
 .navbar a {
-    color: white;
+    color: rgba(255, 255, 255, 0.58);
     font-size: 16px;
     font-weight: 600;   
     text-decoration: none;
+    height: 100%;
+    padding: 20px;
+    transition: 0.3s;
+}
+.navbar a:hover:not(.active) {
+    color: #fff;
+
 }
 
-.navbar a .active {
-    color: darkred;
+.navbar .active {
+    position: relative;
+    font-family: "DM Serif Display", serif;
+    color: rgb(198, 172, 25);
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+.navbar .active::before {
+    position: absolute;
+    display: block;
+    content: '';
+
+    bottom: 0;
+    width: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1.5px;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    animation-name: showBorderBottom;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    transition-duration: 0.3s;
+}
+
 
 .box_btn_lang {
     position: absolute;
@@ -66,8 +97,6 @@
 }
 
 
-
-
 @keyframes showHeader {
     0% {
         opacity: 0;
@@ -77,5 +106,17 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes showBorderBottom {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 60%;
+    }
+    100% {
+        width: 120%;
     }
 }

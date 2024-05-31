@@ -33,6 +33,7 @@ import studio4 from './images/studio/studio4.jpg'
 export type StateType = {
     id: number
     chapterName: string
+    chapterNameEng: string
     image: string
     setImages: Array<string>
 }
@@ -42,30 +43,34 @@ export const state: Array<StateType> = [
     {
         id: 1,
         chapterName: 'Балетные фотографии',
+        chapterNameEng: 'Ballet photography',
         image: ballet6,
         setImages: [ballet1, ballet2, ballet3, ballet4, ballet5, ballet6, ballet7, ballet8, ballet9]
     },
     {
         id: 2,
         chapterName: 'Деловые портреты',
+        chapterNameEng: 'Bisiness portrait',
         image: portrait1,
         setImages: [portrait1, portrait2, portrait3, portrait4, portrait5]
     },
     {
         id: 3,
         chapterName: 'Модельные сниппеты',
+        chapterNameEng: 'Model snippets',
         image: model1,
         setImages: [model1, model2, model3, model4, model5, model6]
     },
     {
         id: 4,
         chapterName: 'Студийная фотография',
+        chapterNameEng: 'Studio photography',
         image: studio1,
         setImages: [studio1, studio2, studio3, studio4]
     }
 ]
 
-export const stateEng: Array<StateType> = [
+export const stateEng: Array<any> = [
     {
         id: 1,
         chapterName: 'Ballet photography',

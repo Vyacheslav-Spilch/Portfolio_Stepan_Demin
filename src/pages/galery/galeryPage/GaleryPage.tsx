@@ -1,14 +1,7 @@
 import s from './galeryPage.module.css'
 
-// import cover1 from './../images/cover1.jpg'
-// import cover2 from './../images/cover2.jpg'
-// import cover3 from './../images/cover3.jpg'
-// import cover4 from './../images/cover4.jpg'
-// import cover5 from './../images/cover5.jpg'
-// import cover6 from './../images/cover6.jpg'
-
-import { state, stateEng } from './../state'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { state } from './../state'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { Modal } from './modal/Modal'
 import { ScrollToTop } from '../../../utils/ScrollToTop'
@@ -27,13 +20,14 @@ export const GaleryPage = () => {
 
 
     //-----*
-    const stateEng = ['Ballet  photography', 'Bisiness portrait', 'Model snippets', 'Studio photography']
+    const russainLenguage: boolean = changeLang === 'russian'
+
 
     //id
     const { id } = useParams()
     const idPage = Number(id) - 1
 
-    const openModalWindow = (indexImg: number) => {
+    const openModal = (indexImg: number) => {
         setShowModal(true)
         setIndexModal(indexImg)
     }
@@ -42,7 +36,7 @@ export const GaleryPage = () => {
         navigate('/')
     } 
 
-    const backChapter = () => {
+    const prevChapter = () => {
         if(id) navigate(`/galery/${Number(id) - 1}`)
     }
 
@@ -56,8 +50,8 @@ export const GaleryPage = () => {
     const goNextRu = idPage !== (state.length - 1) ? state[idPage + 1].chapterName : ''
 
     //-----*
-    const goBackEng = idPage !== 0 ? stateEng[idPage - 1] : ''
-    const goNextEng = idPage !== (state.length - 1) ? stateEng[idPage + 1] : ''
+    const goBackEng = idPage !== 0 ? state[idPage - 1].chapterNameEng : ''
+    const goNextEng = idPage !== (state.length - 1) ? state[idPage + 1].chapterNameEng : ''
 
     console.log(goNextEng);
     
@@ -68,25 +62,25 @@ export const GaleryPage = () => {
                 <button className={s.btn_go_main} onClick={goMain}><i className='bx bx-left-arrow-alt'></i></button>
                     <div className={s.box_title}>
                         <button 
-                            onClick={backChapter} 
+                            onClick={prevChapter} 
                             className={s.btn_back}>
-                                {changeLang === 'russian' ? gobBackRu : goBackEng}
+                                {russainLenguage ? gobBackRu : goBackEng}
                             </button>
-                        <h2>{changeLang === 'russian' ? state[idPage].chapterName : stateEng[idPage]}</h2>
+                        <h2>{russainLenguage ? state[idPage].chapterName : state[idPage].chapterNameEng}</h2>
                         <button 
                             onClick={nextChapter} 
                             className={s.btn_next}>
-                                {changeLang === 'russian' ? goNextRu : goNextEng}
+                                {russainLenguage ? goNextRu : goNextEng}
                         </button>
                     </div>
             </header>
             <div className={s.box_images}>
-                {state[idPage].setImages.map((img, index) => {
+                {state[idPage].setImages.map((image, index) => {
                     return (
                         <div className={s.box_img} key={index}>
                             <img 
-                                onClick={() => openModalWindow(index)} 
-                                src={img} 
+                                onClick={() => openModal(index)} 
+                                src={image} 
                                 alt="" 
                             />
                         </div>

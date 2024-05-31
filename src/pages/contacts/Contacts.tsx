@@ -14,6 +14,7 @@ export const Contacts = () => {
     const phone = changeLang === 'russian' ? 'Телефон' : 'Phone'
     const mail = changeLang === 'russian' ? 'Почта' : 'Mail'
 
+    const fullYaer = new Date().getFullYear()
 
     return (
         <section id='contacts' className={s.box_contacts}>
@@ -36,6 +37,12 @@ export const Contacts = () => {
                     </div>
                 </nav>
             </div>
+            <footer className={s.box_footer}>
+                <ul>
+                    <li>Stepan Demin / Photographer</li>
+                    <li>{fullYaer}</li>
+                </ul>
+            </footer>
         </section>
     )
 }
