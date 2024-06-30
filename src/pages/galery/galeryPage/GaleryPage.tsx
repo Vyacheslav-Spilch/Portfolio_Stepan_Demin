@@ -14,16 +14,12 @@ export const GaleryPage = () => {
 
     const navigate = useNavigate()
 
-    //state
     const [showModal, setShowModal] = useState<boolean>(false)
     const [indexModal, setIndexModal] = useState<number>(0)
 
 
-    //-----*
     const russainLenguage: boolean = changeLang === 'russian'
 
-
-    //id
     const { id } = useParams()
     const idPage = Number(id) - 1
 
@@ -37,23 +33,20 @@ export const GaleryPage = () => {
     } 
 
     const prevChapter = () => {
-        if(id) navigate(`/galery/${Number(id) - 1}`)
+        if (id) navigate(`/galery/${Number(id) - 1}`)
     }
 
     const nextChapter = () => {
-        if(id) navigate(`/galery/${Number(id) + 1}`)
+        if (id) navigate(`/galery/${Number(id) + 1}`)
     }
 
 
-    //-----*
     const gobBackRu = idPage !== 0 ? state[idPage - 1].chapterName : ''
     const goNextRu = idPage !== (state.length - 1) ? state[idPage + 1].chapterName : ''
 
-    //-----*
     const goBackEng = idPage !== 0 ? state[idPage - 1].chapterNameEng : ''
     const goNextEng = idPage !== (state.length - 1) ? state[idPage + 1].chapterNameEng : ''
 
-    console.log(goNextEng);
     
     return (
         <div className={s.box_galery_page}>
@@ -81,7 +74,7 @@ export const GaleryPage = () => {
                             <img 
                                 onClick={() => openModal(index)} 
                                 src={image} 
-                                alt="" 
+                                alt="Изображение" 
                             />
                         </div>
                     )
@@ -94,7 +87,7 @@ export const GaleryPage = () => {
                                 indexModal={indexModal} 
                                 setIndexModal={setIndexModal}
                                 setShowModal={setShowModal}
-                            />}
+            />}
         </div>
     )
 }

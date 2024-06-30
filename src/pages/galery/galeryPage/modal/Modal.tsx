@@ -17,9 +17,7 @@ export const Modal = ({
     setShowModal
     }: ModalType) => {
 
-    const setImagesLength = state[idPage].setImages.length - 1
-    console.log(setImagesLength);
-    
+    const setImagesLength = state[idPage].setImages.length - 1    
 
     const prevImageHandler = () => {
         if (indexModal !== 0) {
@@ -40,6 +38,7 @@ export const Modal = ({
     const closeModalHandler = () => {
         setShowModal(false)
     }
+    
     return (
         <div className={s.window}>
             <div className={s.box_modal}>

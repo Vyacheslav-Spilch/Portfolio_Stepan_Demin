@@ -1,6 +1,6 @@
 import s from './messangers.module.css'
 
-export const  Messangers = () => {
+export const Messangers = () => {
     return (
         <nav className={s.box_messangers}>
             <a className={s.instagram} href="" target='_blank'>
