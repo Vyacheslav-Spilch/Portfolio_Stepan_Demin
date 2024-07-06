@@ -30,9 +30,11 @@ import studio3 from './images/studio/studio3.jpg'
 import studio4 from './images/studio/studio4.jpg'
 
 
+export type ChapterType = 'chapterName' | 'chapterNameEng'
+
 export type StateType = {
     id: number
-    chapterName: string
+    chapterName: string | ChapterType
     chapterNameEng: string
     image: string
     setImages: Array<string>

@@ -1,12 +1,12 @@
 import s from './galeryPage.module.css'
 
-import { state } from './../state'
+import { ChapterType, state } from './../state'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { Modal } from './modal/Modal'
 import { ScrollToTop } from '../../../utils/ScrollToTop'
 import { Context } from '../../../Context'
-import { ValueContext } from '../../../App'
+import { SelectLang, ValueContext } from '../../../App'
 
 export const GaleryPage = () => {
 
@@ -17,7 +17,7 @@ export const GaleryPage = () => {
     const navigate = useNavigate()
 
 
-    const russainLenguage: boolean = changeLang === 'russian'
+    const russainLanguage: boolean = changeLang === 'russian'
 
     const idPage = Number(id) - 1
 
@@ -38,12 +38,14 @@ export const GaleryPage = () => {
         if (id) navigate(`/galery/${Number(id) + 1}`)
     }
 
+    const handlerToBack = (chapterName: ChapterType) => {
+        return idPage !== 0 ? state[idPage - 1][chapterName] : ''
 
-    const gobBackRu = idPage !== 0 ? state[idPage - 1].chapterName : ''
-    const goNextRu = idPage !== (state.length - 1) ? state[idPage + 1].chapterName : ''
+    }
+    const handlerToNext = (chapterName: ChapterType) => {
+        return idPage !== (state.length - 1) ? state[idPage + 1][chapterName] : ''
+    }
 
-    const goBackEng = idPage !== 0 ? state[idPage - 1].chapterNameEng : ''
-    const goNextEng = idPage !== (state.length - 1) ? state[idPage + 1].chapterNameEng : ''
 
     
     return (
@@ -55,13 +57,13 @@ export const GaleryPage = () => {
                         <button 
                             onClick={prevChapter} 
                             className={s.btn_back}>
-                                {russainLenguage ? gobBackRu : goBackEng}
+                                { russainLanguage ? handlerToBack('chapterName') : handlerToBack('chapterNameEng') }
                             </button>
-                        <h2>{russainLenguage ? state[idPage].chapterName : state[idPage].chapterNameEng}</h2>
+                        <h2>{russainLanguage ? state[idPage].chapterName : state[idPage].chapterNameEng}</h2>
                         <button 
                             onClick={nextChapter} 
                             className={s.btn_next}>
-                                {russainLenguage ? goNextRu : goNextEng}
+                                { russainLanguage ? handlerToNext('chapterName') : handlerToNext('chapterNameEng') }
                         </button>
                     </div>
             </header>
@@ -70,6 +72,7 @@ export const GaleryPage = () => {
                     return (
                         <div className={s.box_img} key={index}>
                             <img 
+                                key={index}
                                 onClick={() => openModal(index)} 
                                 src={image} 
                                 alt="Изображение" 
@@ -78,13 +81,12 @@ export const GaleryPage = () => {
                     )
                 })}
             </div>
-            {
-                showModal && <Modal 
-                                idPage={idPage}
-                                state={state} 
-                                indexModal={indexModal} 
-                                setIndexModal={setIndexModal}
-                                setShowModal={setShowModal}
+            {showModal && <Modal 
+                            idPage={idPage}
+                            state={state} 
+                            indexModal={indexModal} 
+                            setIndexModal={setIndexModal}
+                            setShowModal={setShowModal}
             />}
         </div>
     )
