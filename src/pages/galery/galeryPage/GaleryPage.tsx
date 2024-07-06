@@ -11,16 +11,14 @@ import { ValueContext } from '../../../App'
 export const GaleryPage = () => {
 
     const { changeLang } = useContext<ValueContext>(Context)
-
+    const [ showModal, setShowModal ] = useState<boolean>(false)
+    const [ indexModal, setIndexModal ] = useState<number>(0)
+    const { id } = useParams()
     const navigate = useNavigate()
-
-    const [showModal, setShowModal] = useState<boolean>(false)
-    const [indexModal, setIndexModal] = useState<number>(0)
 
 
     const russainLenguage: boolean = changeLang === 'russian'
 
-    const { id } = useParams()
     const idPage = Number(id) - 1
 
     const openModal = (indexImg: number) => {

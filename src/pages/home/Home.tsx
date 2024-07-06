@@ -7,8 +7,6 @@ import s from './home.module.css'
 export const Home = () => {
 
     const { changeLang } = useContext<ValueContext>(Context)
-
-    
     const titleName = changeLang === 'russian' ? 'Степан Дёмин' : 'Stepan Demin'
 
     return (

@@ -12,7 +12,9 @@ export const Galery = () => {
 
     const { changeLang } = useContext<ValueContext>(Context)
 
-    const titleChapter = changeLang === 'russian' ? 'Галерея' : 'Galery'
+    const selectLang: boolean = changeLang === 'russian'
+
+    const titleChapter = selectLang ? 'Галерея' : 'Galery'
 
     return (
         <section id="galery" className={s.box_galery}>
@@ -22,7 +24,7 @@ export const Galery = () => {
             <div className={s.box_images}>
                 {state.map(chapter => {
                     return (
-                        <div key={chapter.id} className={changeLang === 'russian' ? s.wrapper_img_chapter : s.wrapper_img_chapter_eng}>
+                        <div key={chapter.id} className={selectLang ? s.wrapper_img_chapter : s.wrapper_img_chapter_eng}>
                             <NavLink to={`/galery/${chapter.id}`}>
                                 <img src={chapter.image} alt="" />
                             </NavLink>

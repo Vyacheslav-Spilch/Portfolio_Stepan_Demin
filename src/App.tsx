@@ -2,7 +2,7 @@ import './App.css'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { GaleryPage } from './pages/galery/galeryPage/GaleryPage'
-import { Layout } from './pages/Layout/Layout'
+import { Layout } from './Layout/Layout'
 import { useEffect, useState } from 'react'
 import { Context } from './Context'
 import { getSelectLang } from './utils/GetSelectLang'
@@ -24,12 +24,6 @@ function App() {
     changeLang,
     setChangeLang
   }
-
-
-  // useEffect(() => {
-  //   localStorage.clear()
-    
-  // }, [])
 
   return (
     <div className='main'>

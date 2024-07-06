@@ -8,7 +8,7 @@ export const Contacts = () => {
 
     const { changeLang } = useContext<ValueContext>(Context)
 
-    const selectLang = changeLang === 'russian'
+    const selectLang: boolean = changeLang === 'russian'
 
 
     const titleChapter = selectLang ? 'Контакты' : 'Contacts'
@@ -16,7 +16,7 @@ export const Contacts = () => {
     const phone = selectLang ? 'Телефон' : 'Phone'
     const mail = selectLang ? 'Почта' : 'Mail'
 
-    const fullYaer = new Date().getFullYear()
+    const fullYear = new Date().getFullYear()
 
     return (
         <section id='contacts' className={s.box_contacts}>
@@ -42,7 +42,7 @@ export const Contacts = () => {
             <footer className={s.box_footer}>
                 <ul>
                     <li>Stepan Demin / Photographer</li>
-                    <li>{fullYaer}</li>
+                    <li>{fullYear}</li>
                 </ul>
             </footer>
         </section>
