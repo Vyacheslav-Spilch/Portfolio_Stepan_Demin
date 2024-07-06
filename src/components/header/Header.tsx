@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { ValueContext } from '../../App'
 import { Context } from '../../Context'
 import s from './header.module.css'
+import { SelectLang } from './../../App'
 
 
 type SectionPageType = 'main' | 'about_me' | 'galery' | 'contacts'
@@ -10,28 +11,19 @@ export const Header = () => {
 
     const { changeLang, setChangeLang } = useContext<ValueContext>(Context)
 
-    const [sectionPage, setSectionPage] = useState<SectionPageType>('main')
+    const [ sectionPage, setSectionPage ] = useState<SectionPageType>('main')
 
 
     const toggleSectionPage = (section: SectionPageType): void => {
         setSectionPage(section)
     }
 
-    const selectRussianLang = () => {
-        setChangeLang('russian')
+    const toSwitchLanguage = (lang: SelectLang) => {
+        setChangeLang(lang)
         if(localStorage.getItem('language') !== null) {
-            localStorage['language'] = 'russian'
+            localStorage['language'] = lang
         } else {
-            localStorage.setItem('language', 'russian')
-        }
-    }
-
-    const selectEnglandLang = () => {
-        setChangeLang('england')
-        if(localStorage.getItem('language') !== null) {
-            localStorage['language'] = 'england'
-        } else {
-            localStorage.setItem('language', 'england')
+            localStorage.setItem('language', lang)
         }
     }
 
@@ -70,8 +62,8 @@ export const Header = () => {
                 </a>
             </nav>
             <div className={s.box_btn_lang}>
-                <button className={RusClassName} onClick={selectRussianLang}>Ru</button>
-                <button className={EngClassName} onClick={selectEnglandLang}>En</button>
+                <button className={RusClassName} onClick={() => toSwitchLanguage('russian')}>Ru</button>
+                <button className={EngClassName} onClick={() => toSwitchLanguage('england')}>En</button>
             </div>
         </header>
     )
