@@ -38,12 +38,12 @@ export const GaleryPage = () => {
         if (id) navigate(`/galery/${Number(id) + 1}`)
     }
 
-    const handlerToBack = (chapterName: ChapterType): string | null => {
+    const handlerToPrev = (chapterName: ChapterType): string | null => {
         return idPage !== 0 ? state[idPage - 1][chapterName] : null
 
     }
     const handlerToNext = (chapterName: ChapterType) => {
-        return idPage !== (state.length - 1) ? `${state[idPage + 1][chapterName] }` : null
+        return idPage !== (state.length - 1) ? state[idPage + 1][chapterName] : null
     }
 
 
@@ -57,7 +57,7 @@ export const GaleryPage = () => {
                         <button 
                             onClick={prevChapter} 
                             className={s.btn_back}>
-                                { russainLanguage ? handlerToBack('chapterName') : handlerToBack('chapterNameEng') }
+                                { russainLanguage ? handlerToPrev('chapterName') : handlerToPrev('chapterNameEng') }
                             </button>
                         <h2>{russainLanguage ? state[idPage].chapterName : state[idPage].chapterNameEng}</h2>
                         <button 

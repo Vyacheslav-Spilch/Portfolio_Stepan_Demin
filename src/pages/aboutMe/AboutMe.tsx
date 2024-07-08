@@ -13,7 +13,7 @@ export const AboutMe = () => {
     const { changeLang } = useContext<ValueContext>(Context)
     const selectLanguage: boolean = changeLang === 'russian'
 
-    const informations = selectLanguage ? generalInformation['russian'] : generalInformation['england']
+    const information = selectLanguage ? generalInformation['russian'] : generalInformation['england']
 
     const titleChapter = selectLanguage ? 'О себе' : 'About me'
 
@@ -24,7 +24,7 @@ export const AboutMe = () => {
                     <span className={s.title_gradient}>{titleChapter}</span>
                 </h2>
                 <ul>
-                    {informations.map((text, index) => (
+                    {information.map((text: string, index) => (
                         <li key={index}>{text}</li>
                     ))}
                 </ul>
