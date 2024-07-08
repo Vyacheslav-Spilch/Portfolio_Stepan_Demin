@@ -1,6 +1,6 @@
 import s from './galeryPage.module.css'
 
-import { ChapterType, state } from './../state'
+import { ChapterType, state } from '../state/state'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { Modal } from './modal/Modal'
@@ -18,7 +18,6 @@ export const GaleryPage = () => {
 
 
     const russainLanguage: boolean = changeLang === 'russian'
-
     const idPage = Number(id) - 1
 
     const openModal = (indexImg: number) => {
@@ -30,6 +29,7 @@ export const GaleryPage = () => {
         navigate('/')
     } 
 
+
     const prevChapter = () => {
         if (id) navigate(`/galery/${Number(id) - 1}`)
     }
@@ -38,12 +38,12 @@ export const GaleryPage = () => {
         if (id) navigate(`/galery/${Number(id) + 1}`)
     }
 
-    const handlerToBack = (chapterName: ChapterType) => {
-        return idPage !== 0 ? state[idPage - 1][chapterName] : ''
+    const handlerToBack = (chapterName: ChapterType): string | null => {
+        return idPage !== 0 ? state[idPage - 1][chapterName] : null
 
     }
     const handlerToNext = (chapterName: ChapterType) => {
-        return idPage !== (state.length - 1) ? state[idPage + 1][chapterName] : ''
+        return idPage !== (state.length - 1) ? `${state[idPage + 1][chapterName] }` : null
     }
 
 

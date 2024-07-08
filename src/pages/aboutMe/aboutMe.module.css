@@ -63,13 +63,11 @@
     animation-timeline: --showInfoText;
     animation-range: 10% 35%;
     transition: all 0.4s ease;
-    font-size: 20px;
+    font-size: 23px;
     line-height: 30px;
     opacity: 0;
 }
-.box_info ul li:first-child {
-    font-size: 23px;
-}
+
 
 .box_info ul li:nth-child(1) {
     animation-delay: 0.5s;

@@ -1,4 +1,4 @@
-import { state, StateType } from '../../state'
+import { state, StateType } from '../../state/state'
 import s from './modal.module.css'
 
 type ModalType = {

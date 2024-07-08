@@ -4,7 +4,7 @@ import { ValueContext } from '../../App'
 import { Context } from '../../Context'
 import s from './galery.module.css'
 
-import { state} from './state'
+import { state} from './state/state'
 
 
 

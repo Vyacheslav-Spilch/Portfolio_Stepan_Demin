@@ -10,7 +10,6 @@ type SectionPageType = 'main' | 'about_me' | 'galery' | 'contacts'
 export const Header = () => {
 
     const { changeLang, setChangeLang } = useContext<ValueContext>(Context)
-
     const [ sectionPage, setSectionPage ] = useState<SectionPageType>('main')
 
 
