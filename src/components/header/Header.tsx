@@ -5,12 +5,12 @@ import s from './header.module.css'
 import { SelectLang } from './../../App'
 
 
-type SectionPageType = 'main' | 'about_me' | 'galery' | 'contacts'
+type SectionPageType = 'home' | 'about_me' | 'galery' | 'contacts'
 
 export const Header = () => {
 
     const { changeLang, setChangeLang } = useContext<ValueContext>(Context)
-    const [ sectionPage, setSectionPage ] = useState<SectionPageType>('main')
+    const [ sectionPage, setSectionPage ] = useState<SectionPageType>('home')
 
 
     const toggleSectionPage = (section: SectionPageType): void => {
@@ -28,18 +28,18 @@ export const Header = () => {
 
 
     const russainLanguage: boolean = changeLang === 'russian'
-    const RusClassName = changeLang === 'russian' ? `${s.btn_rus} ${s.active}` : s.btn_rus
-    const EngClassName = changeLang === 'england' ? `${s.btn_eng} ${s.active}` : s.btn_eng
+    const RusClassName = russainLanguage ? `${s.btn_rus} ${s.active}` : s.btn_rus
+    const EngClassName = russainLanguage ? `${s.btn_eng} ${s.active}` : s.btn_eng
 
     return (
         <header className={s.header}>
             <div className={s.logo}>Logo</div>
             <nav className={s.navbar}>
                 <a href="#home" 
-                    className={sectionPage === 'main' ? s.active : ''} 
-                    onClick={() => toggleSectionPage('main')}
+                    className={sectionPage === 'home' ? s.active : ''} 
+                    onClick={() => toggleSectionPage('home')}
                 >
-                    <span className={s.title_gradient}>{russainLanguage ? 'Главная' : 'Main'}</span>
+                    <span className={s.title_gradient}>{russainLanguage ? 'Главная' : 'Home'}</span>
                 </a>
                 <a href="#about-me" 
                     className={sectionPage === 'about_me' ? s.active : ''} 

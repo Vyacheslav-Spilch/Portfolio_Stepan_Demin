@@ -17,7 +17,6 @@ export const Modal = ({
     setShowModal
     }: ModalType) => {
 
-
         
     const setImagesLength = state[idPage].setImages.length - 1    
 

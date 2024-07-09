@@ -11,11 +11,11 @@ import { generalInformation } from './state/state'
 export const AboutMe = () => {
 
     const { changeLang } = useContext<ValueContext>(Context)
-    const selectLanguage: boolean = changeLang === 'russian'
+    const russianLanguage: boolean = changeLang === 'russian'
 
-    const information = selectLanguage ? generalInformation['russian'] : generalInformation['england']
+    const information = russianLanguage ? generalInformation['russian'] : generalInformation['england']
 
-    const titleChapter = selectLanguage ? 'О себе' : 'About me'
+    const titleChapter = russianLanguage ? 'О себе' : 'About me'
 
     return (
         <section id='about-me' className={s.about_me}>

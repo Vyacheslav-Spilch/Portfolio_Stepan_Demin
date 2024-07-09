@@ -8,13 +8,13 @@ export const Contacts = () => {
 
     const { changeLang } = useContext<ValueContext>(Context)
 
-    const selectLang: boolean = changeLang === 'russian'
+    const russianLanguage: boolean = changeLang === 'russian'
 
 
-    const titleChapter = selectLang ? 'Контакты' : 'Contacts'
-    const socialChapter = selectLang ? 'Социальные сети' : 'Social networks'
-    const phone = selectLang ? 'Телефон' : 'Phone'
-    const mail = selectLang ? 'Почта' : 'Mail'
+    const titleChapter = russianLanguage ? 'Контакты' : 'Contacts'
+    const socialChapter = russianLanguage ? 'Социальные сети' : 'Social networks'
+    const phone = russianLanguage ? 'Телефон' : 'Phone'
+    const mail = russianLanguage ? 'Почта' : 'Mail'
 
     const fullYear = new Date().getFullYear()
 
