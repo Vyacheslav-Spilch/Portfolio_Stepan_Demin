@@ -1,9 +1,9 @@
 {
   "name": "Portfolio_Stepan_Demin",
+  "homepage": "https://Vyacheslav-Spilch.github.io/portfolio_stepan_demin",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://Vyacheslav-Spilch.github.io/Portfolio_Stepan_Demin",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
