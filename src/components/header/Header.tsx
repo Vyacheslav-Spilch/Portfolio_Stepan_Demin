@@ -3,9 +3,10 @@ import { ValueContext } from '../../App'
 import { Context } from '../../Context'
 import s from './header.module.css'
 import { SelectLang } from './../../App'
+import { stateLinks } from './state/StateLinks'
 
 
-type SectionPageType = 'home' | 'about_me' | 'galery' | 'contacts'
+export type SectionPageType = 'home' | 'about_me' | 'galery' | 'contacts'
 
 export const Header = () => {
 
@@ -13,7 +14,7 @@ export const Header = () => {
     const [ sectionPage, setSectionPage ] = useState<SectionPageType>('home')
 
 
-    const toggleSectionPage = (section: SectionPageType): void => {
+    const toggleSectionPage = (section: SectionPageType) => {
         setSectionPage(section)
     }
 
@@ -28,37 +29,24 @@ export const Header = () => {
 
 
     const russainLanguage: boolean = changeLang === 'russian'
-    const RusClassName = russainLanguage ? `${s.btn_rus} ${s.active}` : s.btn_rus
-    const EngClassName = russainLanguage ? `${s.btn_eng} ${s.active}` : s.btn_eng
+    const RusClassName = changeLang === 'russian' ? `${s.active}` : s.btn_rus
+    const EngClassName = changeLang === 'england' ? `${s.active}` : s.btn_eng
+
+
+    const links = stateLinks.map(link => {
+        return <a href={`${link.link}`} 
+                className={sectionPage === link.link ? s.active : ''} 
+                onClick={() => toggleSectionPage(link.link)}>
+                    <span className={s.title_gradient}>{russainLanguage ? link.nameRu : link.nameEng}</span>
+                </a>
+        })
+    
 
     return (
         <header className={s.header}>
             <div className={s.logo}>Logo</div>
             <nav className={s.navbar}>
-                <a href="#home" 
-                    className={sectionPage === 'home' ? s.active : ''} 
-                    onClick={() => toggleSectionPage('home')}
-                >
-                    <span className={s.title_gradient}>{russainLanguage ? 'Главная' : 'Home'}</span>
-                </a>
-                <a href="#about-me" 
-                    className={sectionPage === 'about_me' ? s.active : ''} 
-                    onClick={() => toggleSectionPage('about_me')}
-                >
-                    {russainLanguage ? 'О себе': 'About me'}
-                </a>
-                <a href="#galery" 
-                    className={sectionPage === 'galery' ? s.active : ''} 
-                    onClick={() => toggleSectionPage('galery')}
-                >
-                    {russainLanguage ? 'Галерея': 'Galery'}
-                </a>
-                <a href="#contacts" 
-                    className={sectionPage === 'contacts' ? s.active : ''} 
-                    onClick={() => toggleSectionPage('contacts')}
-                > 
-                    {russainLanguage ? 'Контакты' : 'Contacts'}
-                </a>
+                {links}
             </nav>
             <div className={s.box_btn_lang}>
                 <button className={RusClassName} onClick={() => toSwitchLanguage('russian')}>Ru</button>

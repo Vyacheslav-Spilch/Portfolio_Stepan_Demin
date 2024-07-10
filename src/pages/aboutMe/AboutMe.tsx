@@ -18,7 +18,7 @@ export const AboutMe = () => {
     const titleChapter = russianLanguage ? 'О себе' : 'About me'
 
     return (
-        <section id='about-me' className={s.about_me}>
+        <section id='about_me' className={s.about_me}>
             <div className={s.box_info}>
                 <h2>
                     <span className={s.title_gradient}>{titleChapter}</span>
