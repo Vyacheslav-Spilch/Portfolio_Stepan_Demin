@@ -17,7 +17,7 @@ export type ValueContext = {
 
 function App() {
 
-  const [changeLang, setChangeLang] = useState<string>(getSelectLang('language', 'russian'))
+  const [ changeLang, setChangeLang ] = useState<string>(getSelectLang('language', 'russian'))
 
 
   const value: ValueContext = {

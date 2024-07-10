@@ -28,7 +28,6 @@
     align-items: center;
     width: 50%;
     height: 100%;
-    /* border: 1px solid red; */
 }
 .navbar a {
     color: rgba(255, 255, 255, 0.58);
@@ -77,7 +76,6 @@
     justify-content: space-between;
     right: 20px;
     width: 70px;
-    /* border: 1px solid red; */
 }
 
 .box_btn_lang button {
@@ -118,5 +116,59 @@
     }
     100% {
         width: 120%;
+    }
+}
+
+@media (max-width: 1120px) {
+    .header {
+        justify-content: space-around;
+        font-size: 12px;
+    }
+    .header .navbar {
+        width: 80%;
+    }
+    .navbar a {
+        font-size: 1.3vm;
+    }
+    .header .logo {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        left: 30px;
+    }
+}
+@media (max-width: 750px) {
+    .header {
+        justify-content: space-around;
+        font-size: 10px;
+    }
+    .header .navbar {
+        width: 80%;
+    }
+    .navbar a {
+        font-size: 1.3vm;
+    }
+    .header .logo {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        left: 30px;
+    }
+    .box_btn_lang {
+        width: 50px;
+    }
+    .box_btn_lang button {
+        font-size: 14px;
+    }
+    @keyframes showBorderBottom {
+        0% {
+            width: 0%;
+        }
+        50% {
+            width: 60%;
+        }
+        100% {
+            width: 100%;
+        }
     }
 }

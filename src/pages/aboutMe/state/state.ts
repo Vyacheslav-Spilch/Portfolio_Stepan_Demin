@@ -1,7 +1,7 @@
 import { SelectLang } from "../../../App"
 
 
-type GeneralInformationType = Record<SelectLang, string[] >
+type GeneralInformationType = Record<SelectLang, string[]>
 
 export const generalInformation: GeneralInformationType = {
     'russian': [

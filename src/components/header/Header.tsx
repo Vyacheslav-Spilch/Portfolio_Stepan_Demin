@@ -6,7 +6,7 @@ import { SelectLang } from './../../App'
 import { stateLinks } from './state/StateLinks'
 
 
-export type SectionPageType = 'home' | 'about_me' | 'galery' | 'contacts'
+export type SectionPageType = 'home' | 'about_me' | 'gallery' | 'contacts'
 
 export const Header = () => {
 
@@ -29,14 +29,14 @@ export const Header = () => {
 
 
     const russainLanguage: boolean = changeLang === 'russian'
-    const RusClassName = changeLang === 'russian' ? `${s.active}` : s.btn_rus
-    const EngClassName = changeLang === 'england' ? `${s.active}` : s.btn_eng
+    const RusClassName = russainLanguage ? `${s.active}` : s.btn_rus
+    const EngClassName = !russainLanguage ? `${s.active}` : s.btn_eng
 
 
     const links = stateLinks.map(link => {
         return <a href={`#${link.link}`} 
-                className={sectionPage === link.link ? s.active : ''} 
-                onClick={() => toggleSectionPage(link.link)}>
+                    className={sectionPage === link.link ? s.active : ''} 
+                    onClick={() => toggleSectionPage(link.link)}>
                     <span className={s.title_gradient}>{russainLanguage ? link.nameRu : link.nameEng}</span>
                 </a>
         })

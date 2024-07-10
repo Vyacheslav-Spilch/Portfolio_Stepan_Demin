@@ -165,3 +165,12 @@
         transform: translateY(0%);
     }
 }
+
+@media (max-width: 1000px) {
+    .about_me {
+        height: 110vh;  
+    }
+    .box_info ul li {
+        font-size: 1.4vm;
+    }
+}

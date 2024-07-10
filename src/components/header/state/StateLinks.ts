@@ -17,7 +17,7 @@ export const stateLinks: LinksType = [
         link: 'about_me', nameRu: 'О себе', nameEng: 'About me'
     },
     {
-        link: 'galery', nameRu: 'Галерея', nameEng: 'Galery'
+        link: 'gallery', nameRu: 'Галерея', nameEng: 'Gallery'
     },
     {
         link: 'contacts', nameRu: 'Контакты', nameEng: 'Contacts'

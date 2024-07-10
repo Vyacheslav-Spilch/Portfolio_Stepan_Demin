@@ -14,10 +14,10 @@ export const Galery = () => {
 
     const russianLanguage: boolean = changeLang === 'russian'
 
-    const titleChapter = russianLanguage ? 'Галерея' : 'Galery'
+    const titleChapter = russianLanguage ? 'Галерея' : 'Gallery'
 
     return (
-        <section id="galery" className={s.box_galery}>
+        <section id="gallery" className={s.box_galery}>
             <h2>
                 <span className={s.title_gradient}>{titleChapter}</span>
             </h2>
