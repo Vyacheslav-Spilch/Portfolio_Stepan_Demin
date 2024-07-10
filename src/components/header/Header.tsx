@@ -34,7 +34,7 @@ export const Header = () => {
 
 
     const links = stateLinks.map(link => {
-        return <a href={`${link.link}`} 
+        return <a href={`#${link.link}`} 
                 className={sectionPage === link.link ? s.active : ''} 
                 onClick={() => toggleSectionPage(link.link)}>
                     <span className={s.title_gradient}>{russainLanguage ? link.nameRu : link.nameEng}</span>
