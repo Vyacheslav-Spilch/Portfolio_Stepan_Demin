@@ -1,12 +1,13 @@
 {
-  "name": "Portfolio_Stepan_Demin",
+  "name": "portfolio",
   "homepage": "https://Vyacheslav-Spilch.github.io/portfolio_stepan_demin",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "react-scripts start",
     "build": "tsc && vite build",
+    "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "yarn run build",
