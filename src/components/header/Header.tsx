@@ -33,8 +33,8 @@ export const Header = () => {
     const EngClassName = !russainLanguage ? `${s.active}` : s.btn_eng
 
 
-    const links = stateLinks.map(link => {
-        return <a href={`#${link.link}`} 
+    const links = stateLinks.map((link, index) => {
+        return <a key={index} href={`#${link.link}`} 
                     className={sectionPage === link.link ? s.active : ''} 
                     onClick={() => toggleSectionPage(link.link)}>
                     <span className={s.title_gradient}>{russainLanguage ? link.nameRu : link.nameEng}</span>
@@ -45,13 +45,13 @@ export const Header = () => {
     return (
         <header className={s.header}>
             <div className={s.logo}>Logo</div>
-            <nav className={s.navbar}>
-                {links}
-            </nav>
-            <div className={s.box_btn_lang}>
-                <button className={RusClassName} onClick={() => toSwitchLanguage('russian')}>Ru</button>
-                <button className={EngClassName} onClick={() => toSwitchLanguage('england')}>En</button>
-            </div>
+                <nav className={s.navbar}>
+                    {links}
+                </nav>
+                <div className={s.box_btn_lang}>
+                    <button className={RusClassName} onClick={() => toSwitchLanguage('russian')}>Ru</button>
+                    <button className={EngClassName} onClick={() => toSwitchLanguage('england')}>En</button>
+                </div>
         </header>
     )
 }

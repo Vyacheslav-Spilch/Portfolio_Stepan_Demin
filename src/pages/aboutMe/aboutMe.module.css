@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100vh;  
+    min-height: 100vh;  
 	padding: 100px 0 0 80px;
     background-color: black;
     animation-name: showGradient;
@@ -172,5 +172,24 @@
     }
     .box_info ul li {
         font-size: 1.4vm;
+    }
+}
+@media (max-width: 800px) {
+    .about_me {
+        display: flex;
+        flex-direction: column;
+        height: 200vh;
+        padding: 10% 5%;
+    }
+    .box_info {
+        width: 100%;
+        font-size: 2vw;
+        text-align: left;
+    }
+    .box_info h2 {
+        font-size: 12vw;
+    }
+    .about_me img {
+        width: 80%;
     }
 }
