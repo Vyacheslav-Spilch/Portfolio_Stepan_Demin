@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes } from 'react-router-dom'
+import { Navigate, Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { GaleryPage } from './pages/galery/galeryPage/GaleryPage'
 import { Layout } from './Layout/Layout'
@@ -29,7 +29,7 @@ function App() {
     <div className='main'>
       <Context.Provider value={value}>
         <Routes>
-            <Route path='/' element={<Layout />}/>
+            <Route path='/portfolio-photographer' element={<Layout />} />
             <Route path='/galery/:id' element={ <GaleryPage />}/>
           </Routes> 
       </Context.Provider>
