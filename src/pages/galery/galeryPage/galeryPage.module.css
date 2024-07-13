@@ -178,7 +178,7 @@
 }
 @media (max-width: 450px) {
     .box_img {
-        width: 80%;
+        width: 85%;
         height: 100%;
         margin: 10px 5px;
         cursor: pointer;
