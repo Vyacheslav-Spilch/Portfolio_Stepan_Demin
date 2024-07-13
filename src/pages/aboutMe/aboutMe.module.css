@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     min-height: 100vh;  
-	padding: 100px 0 0 80px;
+	padding: 80px 0 0 80px;
     background-color: black;
     animation-name: showGradient;
     animation-timing-function: linear;
@@ -16,13 +16,42 @@
     transition: all 0.4s ease;
     filter: grayscale(100%);
 }
+@media (max-width: 1000px) {
+    .about_me {
+        padding: 80px 0 0 80px;
+    }
+}
+@media (max-width: 700px) {
+    .about_me {
+        padding: 20px 20px 20px;
+        flex-direction: column;
+        align-items: center;
+        min-height: 110vh;  
+    }
+}
+@media (max-width: 500px) {
+    .about_me {
+        padding: 20px 10px 20px;
+    }
+}
 
 .box_info {
     width: 60%;
     height: 100%;
 }
+@media (max-width: 700px) {
+    .box_info {
+        width: 80%;
+    }
+}
+@media (max-width: 500px) {
+    .box_info {
+        width: 95%;
+    }
+}
+
 .box_info h2 {
-    font-size: 52px;
+    font-size: 50px;
     font-family: "DM Serif Display", serif;
     font-weight: 600;
     text-transform: uppercase;
@@ -40,6 +69,17 @@
     opacity: 0;
     transform: translateX(-50%);
 }
+@media (max-width: 1000px) {
+    .box_info h2 {
+        font-size: 3em;
+    }
+}
+@media (max-width: 600px) {
+    .box_info h2 {
+        font-size: 2.6em;
+    }
+}
+
 .title_gradient {
     font-family: "DM Serif Display", serif;
     color: rgb(198, 172, 25);
@@ -50,7 +90,6 @@
 
 .box_info ul {
     list-style-type: none;
-    line-height: 25px;
     color: #fff;
 }
 .box_info ul li {
@@ -68,6 +107,22 @@
     opacity: 0;
 }
 
+@media (max-width: 1000px) {
+    .box_info ul li {
+        font-size: 1.5em;
+        line-height: 25px;
+    }
+}
+@media (max-width: 700px) {
+    .box_info ul li {
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 500px) {
+    .box_info ul li {
+        font-size: 1em;
+    }
+}
 
 .box_info ul li:nth-child(1) {
     animation-delay: 0.5s;
@@ -83,7 +138,7 @@
 }
 
 
-.about_me img {
+.about_me .img_desc {
     width: 35%;
     height: 100%;
     margin-right: 40px;
@@ -97,7 +152,45 @@
     animation-range: 15% 30%;
     transition: opacity 0.6s ease-in-out;
     object-fit: cover;
+}
+.img_mobile {
+    display: none;
+}
+@media (max-width: 700px) {
+    .img_desc {
+        display: none;
+    }
+    .img_mobile {
+        width: 90%;
+        display: block;
+        animation-name: showImageMobile;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        view-timeline-name: --showImageMobile;
+        animation-timeline: --showImageMobile;
+        animation-range: 15% 30%;
+        transition: opacity 0.6s ease-in-out;
+        object-fit: cover;
+    }
+}
 
+@keyframes showImageMobile {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75;       
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes showImage {

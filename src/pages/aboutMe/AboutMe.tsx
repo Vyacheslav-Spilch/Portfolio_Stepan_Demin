@@ -4,6 +4,8 @@ import { Context } from '../../Context'
 import './../../styles/main.css'
 import s from './aboutMe.module.css'
 import img_about_me from './images/img_about_me.png'
+import img_mobile from './images/img_mobile.jpg'
+
 import { generalInformation } from './state/state'
 
 
@@ -29,7 +31,8 @@ export const AboutMe = () => {
                     ))}
                 </ul>
             </div>
-            <img src={img_about_me} alt="Фото" />
+            <img className={s.img_desc} src={img_about_me} alt="Фото" />
+            <img className={s.img_mobile} src={img_mobile} alt="Фото" />
         </section>
     )
 }

@@ -54,7 +54,7 @@ export const state: Array<StateType> = [
         chapterName: 'Деловые портреты',
         chapterNameEng: 'Bisiness portrait',
         image: portrait1,
-        setImages: [portrait1, portrait2, portrait3, portrait4, portrait5]
+        setImages: [portrait1, portrait3, portrait2, portrait4, portrait5]
     },
     {
         id: 3,

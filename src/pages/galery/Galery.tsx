@@ -28,6 +28,7 @@ export const Galery = () => {
                             <NavLink to={`/galery/${chapter.id}`}>
                                 <img src={chapter.image} alt="" />
                             </NavLink>
+                            <div className={s.title_mobile}>{russianLanguage ? chapter.chapterName : chapter.chapterNameEng}</div>
                         </div>
                     )
                 })}
