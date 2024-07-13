@@ -1,6 +1,6 @@
 import { SectionPageType } from "../Header"
 
-type LinksType = Array<LinkType>
+export type LinksType = Array<LinkType>
 
 type LinkType = {
     link: SectionPageType

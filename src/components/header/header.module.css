@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 7%;
     top: 0;
     left: 0;
     right: 0;
@@ -17,22 +17,42 @@
     animation-fill-mode: both;
     animation-delay: 0.2s;
     transition: opacity 0.2s ease;
-    
 }
-.desctop_v {
-    border: 2px solid red;
-}
-.header .logo {
-    color: white;
-}
-.navbar {
+
+
+
+.navbar_desc {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 60%;
+    width: 60%;
     height: 100%;
 }
-.navbar a {
+@media (max-width: 800px) {
+    .navbar_desc {
+        width: 75%;
+    }
+    .navbar_desc a {
+        font-size: 2.4vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar_desc {
+        width: 80%;
+    }
+    .navbar_desc a {
+        font-size: 2.3vw;
+    }
+}
+@media (max-width: 650px) {
+    .navbar_desc {
+        display: none;
+    }
+}
+
+
+.navbar_desc a {
     color: rgba(255, 255, 255, 0.58);
     font-size: 16px;
     font-weight: 600;   
@@ -41,12 +61,12 @@
     padding: 20px;
     transition: 0.3s;
 }
-.navbar a:hover:not(.active) {
+.navbar_desc a:hover:not(.active) {
     color: #fff;
 
 }
 
-.navbar .active {
+.navbar_desc .active {
     position: relative;
     font-family: "DM Serif Display", serif;
     color: rgb(198, 172, 25);
@@ -54,7 +74,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.navbar .active::before {
+.navbar_desc .active::before {
     position: absolute;
     display: block;
     content: '';
@@ -74,12 +94,12 @@
 
 
 .box_btn_lang {
-    position: absolute;
     display: flex;
     justify-content: space-between;
     right: 20px;
     width: 70px;
 }
+
 
 .box_btn_lang button {
     font-size: 18px;
@@ -122,51 +142,3 @@
     }
 }
 
-@media (max-width: 1120px) {
-    .header {
-        justify-content: space-around;
-        font-size: 12px;
-    }
-    .header .navbar {
-        width: 80%;
-    }
-    .navbar a {
-        font-size: 1.3em;
-    }
-    .header .logo {
-        position: absolute;
-        transform: translateY(-50%);
-        top: 50%;
-        left: 30px;
-    }
-}
-@media (max-width: 840px) {
-    .header {
-        justify-content: center;
-        font-size: 10px;
-    }
-    .header .navbar {
-        width: 70%;
-    }
-    .navbar a {
-        font-size: 1.1em;
-    }
-    .header .logo {
-        position: absolute;
-        transform: translateY(-50%);
-        top: 50%;
-        left: 30px;
-    }
-    .box_btn_lang {
-        width: 50px;
-    }
-    .box_btn_lang button {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 700px) {
-    .navbar {
-        display: none;
-    }
-}

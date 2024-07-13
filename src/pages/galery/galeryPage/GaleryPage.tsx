@@ -26,7 +26,7 @@ export const GaleryPage = () => {
     }
 
     const goMain = () => {
-        navigate('/')
+        navigate('/portfolio-photographer')
     } 
 
 

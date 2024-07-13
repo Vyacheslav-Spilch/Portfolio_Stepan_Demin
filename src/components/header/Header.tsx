@@ -4,6 +4,8 @@ import { Context } from '../../Context'
 import s from './header.module.css'
 import { SelectLang } from './../../App'
 import { stateLinks } from './state/StateLinks'
+import { HeaderMobule } from './headerMobile/HeaderMobile'
+
 
 
 export type SectionPageType = 'home' | 'about_me' | 'gallery' | 'contacts'
@@ -12,7 +14,6 @@ export const Header = () => {
 
     const { changeLang, setChangeLang } = useContext<ValueContext>(Context)
     const [ sectionPage, setSectionPage ] = useState<SectionPageType>('home')
-
 
     const toggleSectionPage = (section: SectionPageType) => {
         setSectionPage(section)
@@ -40,18 +41,23 @@ export const Header = () => {
                     <span className={s.title_gradient}>{russainLanguage ? link.nameRu : link.nameEng}</span>
                 </a>
         })
+
+
     
 
     return (
         <header className={s.header}>
-            <div className={s.logo}>Logo</div>
-                <nav className={s.navbar}>
+                <nav className={s.navbar_desc}>
                     {links}
+                </nav>
+                <nav className={s.navbar_mobile}>
+                    <HeaderMobule sectionPage={sectionPage} russainLanguage={russainLanguage} toggleSectionPage={toggleSectionPage}/>
                 </nav>
                 <div className={s.box_btn_lang}>
                     <button className={RusClassName} onClick={() => toSwitchLanguage('russian')}>Ru</button>
                     <button className={EngClassName} onClick={() => toSwitchLanguage('england')}>En</button>
                 </div>
+
         </header>
     )
 }
