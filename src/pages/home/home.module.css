@@ -11,7 +11,12 @@
     z-index: 10;
     background-position: center;
 }
-
+@media (max-width: 500px) {
+    .home {
+        background: url(./home_image/img_main1.jpg) center -100px 100px no-repeat;
+        padding: 0 10px 20px;
+    }
+}
 .preview {
     display: flex;
     flex-direction: column;

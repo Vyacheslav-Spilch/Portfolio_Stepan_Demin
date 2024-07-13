@@ -8,6 +8,7 @@
 }
 
 
+
 .burger_icon {
     color: #fff;
     transition: 0.3s;
@@ -86,6 +87,12 @@
     animation-timing-function: linear;
     animation-fill-mode: both;
     transition-duration: 0.3s;
+}
+
+@media (max-width: 450px) {
+    .panel_navigate a {
+        font-size: .8em;
+    }
 }
 
 @keyframes showPanel {
