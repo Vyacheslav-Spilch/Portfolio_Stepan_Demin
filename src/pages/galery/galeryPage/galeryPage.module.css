@@ -176,11 +176,11 @@
         cursor: pointer;
     }
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .box_img {
-        width: 85%;
+        width: 90%;
         height: 100%;
-        margin: 10px 5px;
+        margin: 10px 0;
         cursor: pointer;
     }
 }
