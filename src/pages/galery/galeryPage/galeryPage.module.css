@@ -145,6 +145,17 @@
         right: 2%;
     }
 }
+@media (max-width: 400px) {
+    .box_title {
+        width: 80%;
+    }
+    .mobile_left_switch {
+        left: 0%;
+    }
+    .mobile_right_switch  {
+        right: 0%;
+    }
+}
 
 .box_images {
     width: 100%;

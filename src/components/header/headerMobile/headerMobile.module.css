@@ -7,8 +7,6 @@
     }
 }
 
-
-
 .burger_icon {
     color: #fff;
     transition: 0.3s;
@@ -92,6 +90,11 @@
 @media (max-width: 450px) {
     .panel_navigate a {
         font-size: .7em;
+    }
+}
+@media (max-width: 400px) {
+    .panel_navigate a {
+        font-size: .6em;
     }
 }
 

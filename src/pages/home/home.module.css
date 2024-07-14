@@ -1,13 +1,13 @@
 .home {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: flex-end;
     left: 0;
     right: 0;
     min-width: 100vw;
     height: 100vh;
     padding: 0 30px 30px;
-    background: url(./home_image/img_main1.jpg) center -50px no-repeat;
+    background: url(./home_image/img_main1.jpg) center -200px no-repeat;
     background-attachment: fixed;
     background-size: cover;
     z-index: 10;
@@ -20,7 +20,6 @@
 }
 @media (max-width: 400px) {
     .home {
-        /* background: url(./home_image/img_main1.jpg) center -300px -100px no-repeat; */
         padding: 0 10px 20px;
     }
 }

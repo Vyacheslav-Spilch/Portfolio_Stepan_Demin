@@ -31,11 +31,11 @@ export const Contacts = () => {
                 <nav className={s.box_phone_mail}>
                     <div className={s.box_phone}>
                         <h3><span className={s.title_gradient}>{phone}</span></h3>
-                        <h4>+79991150477</h4>
+                        <h4><a href="tel:+79991150477">+79991150477</a></h4>
                     </div>
                     <div className={s.box_mail}>
                         <h3><span className={s.title_gradient}>{mail}</span></h3>
-                        <h4>Seeeepa30@gmail.com</h4>
+                        <h4><a href="mailto:Seeeepa30@gmail.com?subject=Фотосъемка, запрос с сайта">Seeeepa30@gmail.com</a></h4>
                     </div>
                 </nav>
             </div>
