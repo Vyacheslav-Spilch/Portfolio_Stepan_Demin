@@ -25,7 +25,7 @@ export const Galery = () => {
                 {state.map(chapter => {
                     return (
                         <div key={chapter.id} className={russianLanguage ? s.wrapper_img_chapter : s.wrapper_img_chapter_eng}>
-                            <NavLink to={`/galery/${chapter.id}`}>
+                            <NavLink to={`/portfolio-photographer/galery/${chapter.id}`}>
                                 <img src={chapter.image} alt="" />
                             </NavLink>
                             <div className={s.title_mobile}>{russianLanguage ? chapter.chapterName : chapter.chapterNameEng}</div>
