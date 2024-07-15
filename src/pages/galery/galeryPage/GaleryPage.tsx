@@ -29,7 +29,7 @@ const GaleryPage = () => {
     }
 
     const goMain = () => {
-        navigate('/portfolio-photographer')
+        navigate('/portfolio-photographer/#galery')
     } 
 
 
