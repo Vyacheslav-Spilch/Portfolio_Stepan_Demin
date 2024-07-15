@@ -6,9 +6,9 @@ import { useContext, useState } from 'react'
 import { Modal } from './modal/Modal'
 import { ScrollToTop } from '../../../utils/ScrollToTop'
 import { Context } from '../../../Context'
-import { SelectLang, ValueContext } from '../../../App'
+import { ValueContext } from '../../../App'
 
-export const GaleryPage = () => {
+const GaleryPage = () => {
 
     const { changeLang } = useContext<ValueContext>(Context)
     const [ showModal, setShowModal ] = useState<boolean>(false)
@@ -97,3 +97,5 @@ export const GaleryPage = () => {
         </div>
     )
 }
+
+export default GaleryPage

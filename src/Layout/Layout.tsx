@@ -6,7 +6,7 @@ import { Galery } from "../pages/galery/Galery"
 import { Home } from "../pages/home/Home"
 
 
-export const Layout = () => {
+const Layout = () => {
     return (
         <>
             <ScrollToTop />
@@ -19,3 +19,5 @@ export const Layout = () => {
 
     )
 }
+
+export default Layout
